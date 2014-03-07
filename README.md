@@ -13,9 +13,65 @@ Features
 * Level-shifted PWM and serial channels.
 
 
+Caution
+-------
+
+* 3.3V parts of the system are **not** protected against higher voltages - connecting incorrect power or logic levels can destroy both this board and the Raspberry Pi.
+* Mount board carefully, or only place on a non-conductive surface, otherwise the connecting pins of the CR2032 lithium cell could be shorted, crating a fire hazard.
+
+
+Powering The Board
+------------------
+
+The board has a direct connection to the Raspberry Pi 5V rail, and can therefore be powered entirely from the Pi. The 3.3V rail is *not* connected, as the board has its own 3.3V regulators (see Features.)
+
+As an alternative to powering through the Raspberry Pi's USB power connector, a regulated 5V supply may be applied to the 5VIN or 5VAUX connectors. This allows for systems where more current is needed than can be provided by the Pi's 5V regulator.
+
+
 Files
 -----
 
 * rpi-adapter.sch, rpi-adapter.brd - Eagle files for board. (Created in Eagle Pro V5.)
 * rtc_ds3234.py - utilities for DS3234 RTC.
 
+
+Connectors
+----------
+
+All data connectors use standard 0.1" pitch pin headers.
+
+I use Multicomp 2226TG crimp terminals with 2226A series housings, all available
+from Element14.
+
+* 2226TG crimp terminal: Element14 part number 1593529
+* 2226A-02 crimp housing, 2 way: 1593506
+* 2226A-03 crimp housing, 3 way: 1593507
+* 2226A-04 crimp housing, 3 way: 1593508
+* 2226A-05 crimp housing, 3 way: 1593509
+* 2226A-06 crimp housing, 3 way: 1593510
+
+To connect to an LCD, as not all pins are used in 4-bit mode, and assuming the device is one with a backlight, I use a pair of 6-way cables made up with 2226A-06 housings.
+
+Connection to the Raspberry Pi may be made with a 26-way 1.27 cable terminated with AMP 2-215911-6 IDC sockets, Element14 part number 3815730. As this cable tends to come in 100' reels, I just cut down old PATA hard disc cables. Assembly may be done with careful use of a vice, as the "proper" tools for this are hideously expensive.
+
+Off-board power connections can be made either with standard 0.1" pin headers, but I recommend the use of polarised connectors such as Molex 22-27-2021 (E14: 9731148) connecting to cables terminated with Molex crimp pin 08-50-0032 (E14: 9773789) and housings 22-01-2025 (E14: 143126.)
+
+I have standardised on this connection system for all my single-rail low-voltage power connectors.
+
+
+Datasheets
+----------
+
+Programming details for the DS3234 RTC, PCF8574 I2C IO expander (LCD driver,) and PCA9540 I2C bus multiplexer may be found in the manufacturers' datasheets, in this directory.
+
+
+I2C Busses
+----------
+
+Off-board I2C ports are connected to the Raspberry Pi's I2C bus through an NXP PCA9540 multiplex. Until one or other of the ports are connected through the multiplexer, only address 0x70, the PCA9540 itself, will show on the bus. When Port 0 - the 5V level-shifted one - is enabled, address 0x38 - the PCF8574 - will be in use.
+
+If a second 5V I2C bus is desired, and the 3.3V one not required, a simple level-shifter may be built using a pair of BSN20 MOSFETs and four 4k7 resistors. See NXP AN97055 in this directory for details. (This is exactly how Port 0 is level-shifted on the board.)
+
+Note that Port 1 (3.3V) does __not__ have pull-up resistors fitted and, if used, 4k7 resistors from the 3.3V line to the SDA and SCL lines should be fitted somewhere on the bus.
+
+Access to the Raspberry Pi's I2C bus before the PCA9540 may be made through the connector to the left of the lithium cell holder. (Board viewed with Raspberry Pi connector on the left.) 
