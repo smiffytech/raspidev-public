@@ -3,6 +3,17 @@ Raspberry Pi Adapter Board
 
 Documentation revision 0.1 2014-03-08
 
+
+Directory Structure
+-------------------
+
+Files in this directory are "miscellaneous"; other files are organised into subdirectories:
+
+* datasheets - manufacturers' datasheets for some of the parts used, provided as a reference for programming. 
+* eagle - Cadsoft Eagle schematic and board files. Created in Eagle Professional V5.
+* software - utilities and test code, written primarily in Python.
+
+
 Features
 --------
 
@@ -30,14 +41,6 @@ The board has a direct connection to the Raspberry Pi 5V rail, and can therefore
 As an alternative to powering through the Raspberry Pi's USB power connector, a regulated 5V supply may be applied to the 5VIN or 5VAUX connectors. This allows for systems where more current is needed than can be provided by the Pi's 5V regulator.
 
 
-Files
------
-
-* rpi-adapter.png - rendering of top side of PCB, including silkscreen.
-* rpi-adapter.sch, rpi-adapter.brd - Eagle files for board. (Created in Eagle Pro V5.)
-* rtc_ds3234.py - utilities for DS3234 RTC.
-
-
 Connectors
 ----------
 
@@ -60,12 +63,6 @@ Connection to the Raspberry Pi may be made with a 26-way 1.27 cable terminated w
 Off-board power connections can be made either with standard 0.1" pin headers, but I recommend the use of polarised connectors such as Molex 22-27-2021 (E14: 9731148) connecting to cables terminated with Molex crimp pin 08-50-0032 (E14: 9773789) and housings 22-01-2025 (E14: 143126.)
 
 I have standardised on this connection system for all my single-rail low-voltage power connectors.
-
-
-Datasheets
-----------
-
-Programming details for the DS3234 RTC, PCF8574 I2C IO expander (LCD driver,) and PCA9540 I2C bus multiplexer may be found in the manufacturers' datasheets, in this directory.
 
 
 I2C Busses
@@ -171,3 +168,10 @@ Horizontal connectors labelled left to right.
 0 GPIO22
 0 Ground
 0 3.3V from board external regulator (not Raspberry Pi)
+
+
+Links
+-----
+
+* [Adafruit: Configuring I2C on the Raspberry Pi] http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
+* [100 Random Tasks: Simple SPI on Raspberry Pi] http://www.100randomtasks.com/simple-spi-on-raspberry-pi
