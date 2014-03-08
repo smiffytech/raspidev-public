@@ -77,6 +77,14 @@ Note that Port 1 (3.3V) does __not__ have pull-up resistors fitted and, if used,
 Access to the Raspberry Pi's I2C bus before the PCA9540 may be made through the connector to the left of the lithium cell holder. (Board viewed with Raspberry Pi connector on the left.) 
 
 
+SPI Bus
+-------
+
+The Raspberry Pi SPI bus broken out to the expansion connector comes with two slave select lines, CE0, and CE1. CE0 is used by the DS3234 RTC, leaving only one slave select available, which appears on the 5V level-shifted SPI_5V connector.
+
+If more than one external SPI device is required, it will be necessary to level-shift one or more of the other GPIO pins, and use with external decoding logic in conjunction with CE1. If GPIO24 and GPIO25 were used, for example, four external SPI devices could be used.
+
+
 Pinouts
 -------
 
