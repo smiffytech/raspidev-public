@@ -86,88 +86,88 @@ Horizontal connectors labelled left to right.
 
 ###RPI_I2C###
 
-0 SDA
-0 SCL
-0 Ground
-0 3.3V from board external regulator (not Raspberry Pi)
+* SDA
+* SCL
+* Ground
+* 3.3V from board external regulator (not Raspberry Pi)
 
 ###I2CP0 (5V)###
 
-0 SDA
-0 SCL
-0 Ground
-0 5V (common to entire system)
+* SDA
+* SCL
+* Ground
+* 5V (common to entire system)
 
 ###I2CP1 (3.3V)###
 
-0 SDA
-0 SCL
-0 Ground
-0 3.3V from board external regulator (not Raspberry Pi)
+* SDA
+* SCL
+* Ground
+* 3.3V from board external regulator (not Raspberry Pi)
 
 ###SPI_5V###
 
-0 SS (Level-shifted from Raspberry Pi CE1)
-0 MOSI
-0 MISO
-0 SCLK
-0 Ground
+* SS (Level-shifted from Raspberry Pi CE1)
+* MOSI
+* MISO
+* SCLK
+* Ground
 
 ###LCD###
 
-0 Backlight (Q3 collector, base driven by PCF8574 P7)
-0 5V to backlight
-0 DB7 (PCF8574 P3)
-0 DB6 (PCF8574 P2)
-0 DB5 (PCF8574 P1)
-0 DB4 (PCF8574 P0)
-0 Not connected
-0 Not connected
-0 Not connected
-0 Not connected
-0 EN  (PCF8574 P6)
-0 R/W (PCF8574 P5)
-0 RS  (PCF8574 P4)
-0 VEE (from contrast pot)
-0 5V
-0 Ground
+* Backlight (Q3 collector, base driven by PCF8574 P7)
+* 5V to backlight
+* DB7 (PCF8574 P3)
+* DB6 (PCF8574 P2)
+* DB5 (PCF8574 P1)
+* DB4 (PCF8574 P0)
+* Not connected
+* Not connected
+* Not connected
+* Not connected
+* EN  (PCF8574 P6)
+* R/W (PCF8574 P5)
+* RS  (PCF8574 P4)
+* VEE (from contrast pot)
+* 5V
+* Ground
 
 ###RTC###
 
-0 SQW/INT
-0 32kHz
-0 Ground
+* SQW/INT
+* 32kHz
+* Ground
 
 ###GPIO23###
 
-0 GPIO23
-0 Ground
+* GPIO23
+* Ground
 
 ###GPIO2425###
 
-0 Ground
-0 GPIO25
-0 GPIO24
+* Ground
+* GPIO25
+* GPIO24
 
 ###Serial###
 
-0 Ground
-0 RX
-0 TX
+* Ground
+* RX
+* TX
 
 ###PWM###
 
-0 PWM
-0 Ground
+* PWM
+* Ground
 
 ###GPIO###
 
-0 GPIO4
-0 GPIO17
-0 GPIO27
-0 GPIO22
-0 Ground
-0 3.3V from board external regulator (not Raspberry Pi)
+* GPIO4
+* GPIO17
+* GPIO27
+* GPIO22
+* Ground
+* 3.3V from board external regulator (not Raspberry Pi)
 
 
 Links
