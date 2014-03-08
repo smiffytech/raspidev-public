@@ -70,7 +70,7 @@ I2C Busses
 
 Off-board I2C ports are connected to the Raspberry Pi's I2C bus through an NXP PCA9540 multiplex. Until one or other of the ports are connected through the multiplexer, only address 0x70, the PCA9540 itself, will show on the bus. When Port 0 - the 5V level-shifted one - is enabled, address 0x38 - the PCF8574 - will be in use.
 
-If a second 5V I2C bus is desired, and the 3.3V one not required, a simple level-shifter may be built using a pair of BSN20 MOSFETs and four 4k7 resistors. See NXP AN97055 in this directory for details. (This is exactly how Port 0 is level-shifted on the board.)
+If a second 5V I2C bus is desired, and the 3.3V one not required, a simple level-shifter may be built using a pair of BSN20 MOSFETs and four 4k7 resistors. See NXP AN97055 in the datasheets directory for details. (This is exactly how Port 0 is level-shifted on the board.)
 
 Note that Port 1 (3.3V) does __not__ have pull-up resistors fitted and, if used, 4k7 resistors from the 3.3V line to the SDA and SCL lines should be fitted somewhere on the bus.
 
