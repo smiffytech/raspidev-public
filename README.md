@@ -173,5 +173,5 @@ Horizontal connectors labelled left to right.
 Links
 -----
 
-* [Adafruit: Configuring I2C on the Raspberry Pi] http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
-* [100 Random Tasks: Simple SPI on Raspberry Pi] http://www.100randomtasks.com/simple-spi-on-raspberry-pi
+* [Adafruit: Configuring I2C on the Raspberry Pi]: http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
+* [100 Random Tasks: Simple SPI on Raspberry Pi]: http://www.100randomtasks.com/simple-spi-on-raspberry-pi
