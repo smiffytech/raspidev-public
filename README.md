@@ -94,19 +94,25 @@ Horizontal connectors labelled left to right.
 
 ###RPI_I2C###
 
+(3.3V logic - direct break-out from Raspberry Pi.)
+
 * SDA
 * SCL
 * Ground
 * 3.3V from board external regulator (not Raspberry Pi)
 
-###I2CP0 (5V)###
+###I2CP0###
+
+(5V logic)
 
 * SDA
 * SCL
 * Ground
 * 5V (common to entire system)
 
-###I2CP1 (3.3V)###
+###I2CP1##
+ 
+(3,3V logic)
 
 * SDA
 * SCL
@@ -115,13 +121,17 @@ Horizontal connectors labelled left to right.
 
 ###SPI_5V###
 
-* SS (Level-shifted from Raspberry Pi CE1)
+(5V logic, level-shifted from Raspberry Pi.)
+
+* SS (Raspberry Pi CE1)
 * MOSI
 * MISO
 * SCLK
 * Ground
 
 ###LCD###
+
+(5V logic)
 
 * Backlight (Q3 collector, base driven by PCF8574 P7)
 * 5V to backlight
@@ -142,16 +152,22 @@ Horizontal connectors labelled left to right.
 
 ###RTC###
 
+(3.3V logic)
+
 * SQW/INT
 * 32kHz
 * Ground
 
 ###GPIO23###
 
+(3.3V logic - direct break-out from Raspberry Pi.)
+
 * GPIO23
 * Ground
 
 ###GPIO2425###
+
+(3.3V logic - direct break-out from Raspberry Pi.)
 
 * Ground
 * GPIO25
@@ -159,16 +175,22 @@ Horizontal connectors labelled left to right.
 
 ###Serial###
 
+(5V logic, level-shifted from Raspberry Pi.)
+
 * Ground
 * RX
 * TX
 
 ###PWM###
 
+(5V logic, level-shifted from Raspberry Pi.)
+
 * PWM
 * Ground
 
 ###GPIO###
+
+(3.3V logic - direct break-out from Raspberry Pi.)
 
 * GPIO4
 * GPIO17
