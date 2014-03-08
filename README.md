@@ -1,6 +1,8 @@
 Raspberry Pi Adapter Board
 ==========================
 
+Documentation revision 0.1 2014-03-08
+
 Features
 --------
 
@@ -31,6 +33,7 @@ As an alternative to powering through the Raspberry Pi's USB power connector, a 
 Files
 -----
 
+* rpi-adapter.png - rendering of top side of PCB, including silkscreen.
 * rpi-adapter.sch, rpi-adapter.brd - Eagle files for board. (Created in Eagle Pro V5.)
 * rtc_ds3234.py - utilities for DS3234 RTC.
 
@@ -75,3 +78,96 @@ If a second 5V I2C bus is desired, and the 3.3V one not required, a simple level
 Note that Port 1 (3.3V) does __not__ have pull-up resistors fitted and, if used, 4k7 resistors from the 3.3V line to the SDA and SCL lines should be fitted somewhere on the bus.
 
 Access to the Raspberry Pi's I2C bus before the PCA9540 may be made through the connector to the left of the lithium cell holder. (Board viewed with Raspberry Pi connector on the left.) 
+
+
+Pinouts
+-------
+
+As viewed with board oriented with Raspberry Pi connector to the __left__.
+
+Horizontal connectors labelled left to right.
+
+###RPI_I2C###
+
+0 SDA
+0 SCL
+0 Ground
+0 3.3V from board external regulator (not Raspberry Pi)
+
+###I2CP0 (5V)###
+
+0 SDA
+0 SCL
+0 Ground
+0 5V (common to entire system)
+
+###I2CP1 (3.3V)###
+
+0 SDA
+0 SCL
+0 Ground
+0 3.3V from board external regulator (not Raspberry Pi)
+
+###SPI_5V###
+
+0 SS (Level-shifted from Raspberry Pi CE1)
+0 MOSI
+0 MISO
+0 SCLK
+0 Ground
+
+###LCD###
+
+0 Backlight (Q3 collector, base driven by PCF8574 P7)
+0 5V to backlight
+0 DB7 (PCF8574 P3)
+0 DB6 (PCF8574 P2)
+0 DB5 (PCF8574 P1)
+0 DB4 (PCF8574 P0)
+0 Not connected
+0 Not connected
+0 Not connected
+0 Not connected
+0 EN  (PCF8574 P6)
+0 R/W (PCF8574 P5)
+0 RS  (PCF8574 P4)
+0 VEE (from contrast pot)
+0 5V
+0 Ground
+
+###RTC###
+
+0 SQW/INT
+0 32kHz
+0 Ground
+
+###GPIO23###
+
+0 GPIO23
+0 Ground
+
+###GPIO2425###
+
+0 Ground
+0 GPIO25
+0 GPIO24
+
+###Serial###
+
+0 Ground
+0 RX
+0 TX
+
+###PWM###
+
+0 PWM
+0 Ground
+
+###GPIO###
+
+0 GPIO4
+0 GPIO17
+0 GPIO27
+0 GPIO22
+0 Ground
+0 3.3V from board external regulator (not Raspberry Pi)
