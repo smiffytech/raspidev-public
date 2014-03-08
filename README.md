@@ -90,7 +90,7 @@ Pinouts
 
 As viewed with board oriented with Raspberry Pi connector to the __left__.
 
-Horizontal connectors labelled left to right.
+Vertical connectors labelled top to bottom, horizontal connectors labelled left to right.
 
 ###RPI_I2C###
 
