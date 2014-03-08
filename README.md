@@ -200,6 +200,18 @@ Vertical connectors labelled top to bottom, horizontal connectors labelled left 
 * 3.3V from board external regulator (not Raspberry Pi)
 
 
+Future Developments
+-------------------
+
+I designed this board for a specific purpose (prototyping some instrumentation,) which it satisfies quite adequately. However, were I to make a second, more flexible, iteration, here are some changes I might make:
+
+* Include an on-board LM2576-based 5V power supply. This delivers up to 3A with input voltages from 7V to 40V. 
+* Use surface-mount version of PCF8574.
+* Pass SPI signals through CPLD controlled by CE1 signal and a GPIO pin.  CPLD would be configured to provide multiple CS lines, which would be determined by writing to a register. CPLD would be selected by CE1 then, depending on the state of the GPIO pin, assert the desired CS signal, or take incoming data as instructions. If 2 MSBs are used to select operation, four operations with six bits of data could be performed with a single configuration byte.
+* Feed level translator VCCB pins from selectable load switches controlled by CPLD in previous point. This would allow SPI configuration of 3.3/5V logic on off-board connectors. Probably feed VCCB through a BAT54S permanently connected to 3.3V supply, with 5V supply switched in when required. An adequately rated load switch could also provide power to off-board connectors.
+* LCD connector is currently configured so pins map one-to-one with a backlit LCD module. If all the wiring were done at the LCD end, and if R/W is not used (tie low at LCD,) a compact 10-pin SMD connector could be employed, saving a considerable amount of board space. 
+
+
 Links
 -----
 
