@@ -1,7 +1,7 @@
 Raspberry Pi Adapter Board
 ==========================
 
-Documentation revision 0.1 2014-03-08
+Documentation revision 0.2 2014-03-08 13:00 UCT +10:30
 
 
 Directory Structure
@@ -18,12 +18,12 @@ Features
 --------
 
 * Breaks out all of the main IO pins.
-* 3.3V regulator for all its own chips.
+* 3.3V regulator ([MCP1700T-3102E/TT](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en010642)) for all its own chips.
 * Separate 3.3V regulator for off-board devices.
-* DS3234 RTC.
-* I2C multiplexer - one channel at 3.3V, one channel level-shifted to 5V.
-* I2C bus expander to drive 16x2/16x4 LCD in 4 bit mode, including backight control.
-* Level-shifted PWM and serial channels.
+* [DS3234](http://www.maximintegrated.com/datasheet/index.mvp/id/4051) RTC.
+* [PCA9540](http://www.nxp.com/products/interface_and_connectivity/i2c/i2c_multiplexers_switches/series/PCA9540B.html) I2C multiplexer - one channel at 3.3V, one channel level-shifted to 5V.
+* [PCF8574](http://www.ti.com/product/pcf8574) I2C bus expander to drive 16x2/16x4 LCD in 4 bit mode, including backight control.
+* Level-shifted PWM and serial channels using [TXB0104](http://www.ti.com/product/txb0104).
 
 
 Caution
@@ -173,5 +173,16 @@ Horizontal connectors labelled left to right.
 Links
 -----
 
-* [Adafruit: Configuring I2C on the Raspberry Pi]: http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
-* [100 Random Tasks: Simple SPI on Raspberry Pi]: http://www.100randomtasks.com/simple-spi-on-raspberry-pi
+###How-To###
+
+* [Adafruit: Configuring I2C on the Raspberry Pi](http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c)
+* [100 Random Tasks: Simple SPI on Raspberry Pi](http://www.100randomtasks.com/simple-spi-on-raspberry-pi)
+
+###Manufacturers/Vendors###
+
+* [Element 14 Australia](http://au.element14.com) Electronic component distributor.
+* [Maxim Integrated](http://www.maximintegrated.com/) manufacturer of the DS3234 RTC.
+* [Microchip](http://www.microchip.com) manufacturer of the MCP1700T-3102E/TT voltage regulators.
+* [NXP (formerly Philips Semiconductors)](http://www.nxp.com) manufacturer of the PCA9540 I2C bus multiplexer.
+* [Raspberry Pi](http://www.raspberrypi.org/)
+* [Texas Instruments](http://www.ti.com) manufacturer of the TXB0104 level translators, and PCF8574 I2C bus expander.
