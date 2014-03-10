@@ -84,6 +84,8 @@ The Raspberry Pi SPI bus broken out to the expansion connector comes with two sl
 
 If more than one external SPI device is required, it will be necessary to level-shift one or more of the other GPIO pins, and use with external decoding logic in conjunction with CE1. If GPIO24 and GPIO25 were used, for example, four external SPI devices could be used.
 
+See SpiDev_Doc.pdf (from tightdev.net) in the datasheets directory for documentation on the Python spidev implementation.
+
 
 Pinouts
 -------
